@@ -12,7 +12,7 @@ enum AdminChatType: Int {
 }
 
 class ViewController: UIViewController {
-    var bgView: UIView!
+    var bgBtn: UIButton!
     
     var adminNormalBtn: UIButton!
     var adminNoticeBtn: UIButton!
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
                     print(btn.tag)
                 }
                 
-                self.bgView.bringSubviewToFront(self.adminChatBtnArray[self.adminChatType.rawValue])
+                self.bgBtn.bringSubviewToFront(self.adminChatBtnArray[self.adminChatType.rawValue])
             }
         }
     }
@@ -49,8 +49,8 @@ class ViewController: UIViewController {
 extension ViewController {
     
     func configBtnView() {
-        bgView = UIView(frame: CGRect(x: 20, y: 100, width: 20, height: 20))
-        bgView.backgroundColor = .clear
+        bgBtn = UIButton(frame: CGRect(x: 20, y: 100, width: 20, height: 20))
+        bgBtn.backgroundColor = .clear
         
         adminNormalBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
         adminNormalBtn.setImage(UIImage(named: "iconChatNormal"), for: .normal)
@@ -60,7 +60,7 @@ extension ViewController {
         
         adminChatBtnArray.append(adminNormalBtn)
         
-        bgView.insertSubview(adminNormalBtn, at: 0)
+        bgBtn.insertSubview(adminNormalBtn, at: 0)
         
         adminNoticeBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
         adminNoticeBtn.setImage(UIImage(named: "iconChatNotice"), for: .normal)
@@ -70,7 +70,7 @@ extension ViewController {
         
         adminChatBtnArray.append(adminNoticeBtn)
         
-        bgView.insertSubview(adminNoticeBtn, at: 1)
+        bgBtn.insertSubview(adminNoticeBtn, at: 1)
         
         adminPrBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
         adminPrBtn.setImage(UIImage(named: "iconChatPr"), for: .normal)
@@ -80,7 +80,7 @@ extension ViewController {
         
         adminChatBtnArray.append(adminPrBtn)
         
-        bgView.insertSubview(adminPrBtn, at: 2)
+        bgBtn.insertSubview(adminPrBtn, at: 2)
         
         adminMcBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
         adminMcBtn.setImage(UIImage(named: "iconChatMc"), for: .normal)
@@ -90,9 +90,9 @@ extension ViewController {
         
         adminChatBtnArray.append(adminMcBtn)
         
-        bgView.insertSubview(adminMcBtn, at: 3)
+        bgBtn.insertSubview(adminMcBtn, at: 3)
         
-        self.view.addSubview(bgView)
+        self.view.addSubview(bgBtn)
         
         self.adminChatType = .normal
     }
